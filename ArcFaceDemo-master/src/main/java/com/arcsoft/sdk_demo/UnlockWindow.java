@@ -188,14 +188,20 @@ public class UnlockWindow extends LinearLayout implements OnCameraListener, View
                             max = score.getScore();
                             name = fr.mName;
                         }
+                        //add by wzb for test
+                        if(max>0.6f)break;
+                        //end
                     }
+                    //add by wzb for test
+                    if(max>0.6f)break;
+                    //end
                 }
 
                 //age & gender
-                face1.clear();
-                face2.clear();
-                face1.add(new ASAE_FSDKFace(mAFT_FSDKFace.getRect(), mAFT_FSDKFace.getDegree()));
-                face2.add(new ASGE_FSDKFace(mAFT_FSDKFace.getRect(), mAFT_FSDKFace.getDegree()));
+               // face1.clear();
+               // face2.clear();
+               // face1.add(new ASAE_FSDKFace(mAFT_FSDKFace.getRect(), mAFT_FSDKFace.getDegree()));
+               // face2.add(new ASGE_FSDKFace(mAFT_FSDKFace.getRect(), mAFT_FSDKFace.getDegree()));
                // ASAE_FSDKError error1 = mAgeEngine.ASAE_FSDK_AgeEstimation_Image(mImageNV21, mWidth, mHeight, AFT_FSDKEngine.CP_PAF_NV21, face1, ages);
                // ASGE_FSDKError error2 = mGenderEngine.ASGE_FSDK_GenderEstimation_Image(mImageNV21, mWidth, mHeight, AFT_FSDKEngine.CP_PAF_NV21, face2, genders);
                // Log.d("wzb1", "ASAE_FSDK_AgeEstimation_Image:" + error1.getCode() + ",ASGE_FSDK_GenderEstimation_Image:" + error2.getCode());
@@ -370,11 +376,11 @@ public class UnlockWindow extends LinearLayout implements OnCameraListener, View
     @Override
     public Object onPreview(byte[] data, int width, int height, int format, long timestamp) {
         AFT_FSDKError err = engine.AFT_FSDK_FaceFeatureDetect(data, width, height, AFT_FSDKEngine.CP_PAF_NV21, result);
-        Log.d("wzb1", "AFT_FSDK_FaceFeatureDetect =" + err.getCode());
-        Log.d("wzb1", "Face=" + result.size());
-        for (AFT_FSDKFace face : result) {
-            Log.d("wzb1", "Face:" + face.toString());
-        }
+       // Log.d("wzb1", "AFT_FSDK_FaceFeatureDetect =" + err.getCode());
+       // Log.d("wzb1", "Face=" + result.size());
+      //  for (AFT_FSDKFace face : result) {
+            //Log.d("wzb1", "Face:" + face.toString());
+       // }
         if (mImageNV21 == null) {
             if (!result.isEmpty()) {
                 mAFT_FSDKFace = result.get(0).clone();
