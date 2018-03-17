@@ -218,8 +218,9 @@ public class DetecterActivity extends Activity implements OnCameraListener, View
 		mCameraID = getIntent().getIntExtra("Camera", 0) == 0 ? Camera.CameraInfo.CAMERA_FACING_BACK : Camera.CameraInfo.CAMERA_FACING_FRONT;
 		mCameraRotate = getIntent().getIntExtra("Camera", 0) == 0 ? 90 : 270;
 		mCameraMirror = getIntent().getIntExtra("Camera", 0) == 0 ? false : true;
-		mWidth = 1280;
-		mHeight = 960;
+		Log.d("wzb","detectactivity mCameraRotate="+mCameraRotate+" mCameraMirror="+mCameraMirror);
+		mWidth = 1280;//640;//1280;
+		mHeight = 960;//480;//960;
 		mFormat = ImageFormat.NV21;
 		mHandler = new Handler();
 

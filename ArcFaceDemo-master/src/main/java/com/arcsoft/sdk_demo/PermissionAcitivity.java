@@ -23,7 +23,9 @@ public class PermissionAcitivity extends Activity {
 	private String[] mPermission = new String[] {
 			Manifest.permission.INTERNET,
 			Manifest.permission.CAMERA,
-			Manifest.permission.WRITE_EXTERNAL_STORAGE
+			Manifest.permission.WRITE_EXTERNAL_STORAGE,
+
+
 	};
 
 	private List<String> mRequestPermission = new ArrayList<String>();
